@@ -29,4 +29,9 @@ export class DataService {
 
   }
 
+	getSpot(slug: string): Observable<any> {
+		let apiEndPoint = this.settings.ApiEndPoint + "object/" + slug + "?read_key=" + this.settings.ApiReadKey;
+		return this.http.get(apiEndPoint).map((response: Response) => response.json().object);
+	}
+
 }

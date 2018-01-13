@@ -10,6 +10,8 @@ import { DataService } from './services/data.service';
 import { Settings } from './models/settings';
 import { SpotlistComponent } from './spotlist/spotlist.component';
 import { EventlistComponent } from './eventlist/eventlist.component';
+import { SpotcardComponent } from './spotcard/spotcard.component';
+import { EventcardComponent } from './eventcard/eventcard.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { EventlistComponent } from './eventlist/eventlist.component';
     AppComponent,
     DashboardComponent,
     SpotlistComponent,
-    EventlistComponent
+    EventlistComponent,
+    SpotcardComponent,
+    EventcardComponent
   ],
   imports: [
     BrowserModule,
