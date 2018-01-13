@@ -1,0 +1,16 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Created</th>
+			<th>Title</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let spotevent of spotevents">
+			<td>
+				{{ spotevent.created }}
+			</td>
+			<td>{{ spotevent.title }}</td>
+		</tr>
+	</tbody>
+</table>

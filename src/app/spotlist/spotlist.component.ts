@@ -1,0 +1,24 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { Spot } from '../models/spot';
+
+@Component({
+  selector: 'app-spotlist',
+  templateUrl: './spotlist.component.html',
+  styleUrls: ['./spotlist.component.css']
+})
+export class SpotlistComponent implements OnInit {
+
+	private _spots: Spot[] = [];
+
+	@Input()
+	set spots(spots: Spot[]){
+		this._spots = spots;
+	}
+	get spots(): Spot[] { return this._spots; }
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

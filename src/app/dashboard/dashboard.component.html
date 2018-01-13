@@ -1,3 +1,18 @@
-<p>
-  dashboard works!
-</p>
+<div class="row">
+	<div class="col-md-8" style="background: green; color: white; padding-bottom: 10px;">		
+			<h3>Spots</h3>
+	</div>
+	<div class="col-md-4" style="background: navy; color: white; padding-bottom: 10px;">
+		<h3>Last events</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-8" style="border: 1px #eee solid; border-left:none; padding-bottom: 10px;">
+		<app-spotlist [spots] = "spots"></app-spotlist>
+		<button class="btn btn-primary btn-sm"><i class="glyphicon-plus"></i> Add spot</button>
+		<button class="btn btn-primary btn-sm"><i class="glyphicon-plus"></i> Add event</button>
+	</div>
+	<div class="col-md-4">
+		<app-eventlist [spotevents] = "spotEvents"></app-eventlist>
+	</div>
+</div>

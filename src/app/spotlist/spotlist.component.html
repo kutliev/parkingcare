@@ -1,0 +1,24 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Number</th>
+			<th>Type</th>
+			<th>Cleaned</th>
+			<th>Maintained</th>
+			<th>Paid</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let spot of spots">
+			<td><a routerLink='/spots/{{ spot.slug }}'>{{ spot.title }}</a></td>
+			<td>{{ spot.type }}</td>
+			<td>{{ spot.cleanings.length }}</td>
+			<td>{{ spot.maintenances.length }}</td>
+			<td>{{ spot.payments.length }}</td>
+			<td>
+
+			</td>
+		</tr>
+	</tbody>
+</table>
