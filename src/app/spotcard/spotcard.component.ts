@@ -10,18 +10,16 @@ import { DataService } from '../services/data.service';
 })
 export class SpotcardComponent implements OnInit {
 
-	selectedSpot: Spot;
+  selectedSpot: Spot;
 
   constructor(
   		private route: ActivatedRoute,
   		private dataService: DataService,
-
   	) { }
 
   ngOnInit(): void {
 	  this.getSpot();
   }
-
 
 	getSpot(): void{
 		let spotId = this.route.snapshot.paramMap.get('slug');

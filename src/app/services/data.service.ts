@@ -34,4 +34,40 @@ export class DataService {
 		return this.http.get(apiEndPoint).map((response: Response) => response.json().object);
 	}
 
+//"write_key": this.settings.ApiWriteKey,
+
+
+	saveSpot(spot: Spot): Observable<any> {
+		let apiEndPoint = this.settings.ApiEndPoint + "add-object";
+		let payload = {
+			"write_key": this.settings.ApiWriteKey,
+			"title": spot.title,
+			"type_slug": "spots",
+			"content": "",
+			"metafields": [
+				{
+					"key": "Floor",
+					"type": "floor",
+					"value": spot.floor
+				},
+				{
+					"key": "Type",
+					"type": "type",
+					"value": spot.type
+				}
+			]
+		};
+
+		let headers: Headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+
+		console.log('Headers');
+		console.log(headers);
+
+		let jsonPayload = JSON.stringify(payload);
+		console.log('JSON payload');
+		console.log(jsonPayload);
+
+		return this.http.post(apiEndPoint, jsonPayload, { headers: headers}).map((response: Response) => response.json().object);
+	}
 }

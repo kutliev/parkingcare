@@ -27,8 +27,8 @@ export class DashboardComponent implements OnInit {
 			  this.spotEvents.push(new SpotEvent(rawEvent.title, rawEvent.slug, rawEvent.content, rawEvent.metadata.type, rawEvent.created));
 		  }
 
-		  console.log('this.spotEvents');
-		  console.log(this.spotEvents);
+		  console.log('this.rawSpots');
+		  console.log(rawSpots);
 
 		//Data transformation
 

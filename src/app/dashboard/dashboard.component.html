@@ -9,8 +9,7 @@
 <div class="row">
 	<div class="col-md-8" style="border: 1px #eee solid; border-left:none; padding-bottom: 10px;">
 		<app-spotlist [spots] = "spots"></app-spotlist>
-		<button class="btn btn-primary btn-sm"><i class="glyphicon-plus"></i> Add spot</button>
-		<button class="btn btn-primary btn-sm"><i class="glyphicon-plus"></i> Add event</button>
+		<a class="btn btn-primary btn-sm" routerLink="/createspot"><i class="glyphicon-plus"></i> Add spot</a>
 	</div>
 	<div class="col-md-4">
 		<app-eventlist [spotevents] = "spotEvents"></app-eventlist>
