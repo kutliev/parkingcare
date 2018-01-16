@@ -46,14 +46,25 @@ export class DataService {
 			"content": "",
 			"metafields": [
 				{
-					"key": "Floor",
-					"type": "floor",
-					"value": spot.floor
+					"key": "type",
+					"title": "Type",
+					"value": spot.type
 				},
 				{
-					"key": "Type",
-					"type": "type",
-					"value": spot.type
+					"object_types": "floors",
+					"title": "Floor",
+					"key": "floor",
+					"object": {
+						"_id": "5a53bd813e80773f7e000276"
+					}
+				},
+				{
+					"object_types": "parkings",
+					"title": "OceanView Parking",
+					"key": "parking",
+					"object": {
+						"_id": "5a53bd1585c098487e00036b"
+					}
 				}
 			]
 		};

@@ -25,7 +25,7 @@ export class SpotcardComponent implements OnInit {
 		let spotId = this.route.snapshot.paramMap.get('slug');
 		if (spotId) {
 			this.dataService.getSpot(spotId).subscribe(spot => { 
-				this.selectedSpot = new Spot(spot.title, spot.slug, spot.content, spot.metadata.floor.title, spot.metadata.type); 
+				this.selectedSpot = new Spot(spot._id, spot.title, spot.slug, spot.content, spot.metadata.floor.title, spot.metadata.type); 
 			});
 		}
 	}

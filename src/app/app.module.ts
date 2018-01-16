@@ -13,6 +13,7 @@ import { EventlistComponent } from './eventlist/eventlist.component';
 import { SpotcardComponent } from './spotcard/spotcard.component';
 import { EventcardComponent } from './eventcard/eventcard.component';
 import { SpotcardeditComponent } from './spotcardedit/spotcardedit.component';
+import { EventcardeditComponent } from './eventcardedit/eventcardedit.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SpotcardeditComponent } from './spotcardedit/spotcardedit.component';
     EventlistComponent,
     SpotcardComponent,
     EventcardComponent,
-    SpotcardeditComponent
+    SpotcardeditComponent,
+    EventcardeditComponent
   ],
   imports: [
     BrowserModule,

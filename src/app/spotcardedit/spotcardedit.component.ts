@@ -11,7 +11,7 @@ import { SpotTypes } from '../models/settings';
 })
 export class SpotcardeditComponent implements OnInit {
 
-	selectedSpot: Spot = new Spot('', '', '', 'GroundFloor', 'Vacant');
+	selectedSpot: Spot = new Spot('', '', '', '', 'GroundFloor', 'Vacant');
 	spotTypes: string[];
 	spotFloors: string[];
 
@@ -33,7 +33,7 @@ export class SpotcardeditComponent implements OnInit {
 		let spotId = this.route.snapshot.paramMap.get('slug');
 		if (spotId) {
 			this.dataService.getSpot(spotId).subscribe(spot => {
-				this.selectedSpot = new Spot(spot.title, spot.slug, spot.content, spot.metadata.floor.title, spot.metadata.type);
+				this.selectedSpot = new Spot(spot._id, spot.title, spot.slug, spot.content, spot.metadata.floor.title, spot.metadata.type);
 			});
 		}
 	}
@@ -48,6 +48,8 @@ export class SpotcardeditComponent implements OnInit {
 		}else{
 
 			console.log('Create');
+
+			console.log(this.selectedSpot);
 
 			this.dataService.saveSpot(this.selectedSpot).subscribe(result => {
 				console.log('Result');

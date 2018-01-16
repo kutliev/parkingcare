@@ -9,8 +9,8 @@ export class Spot extends Entity {
 	cleanings: SpotEvent[];
 	maintenances: SpotEvent[];
 
-	constructor(title: string, slug: string, content: string, floor: string, type: string){
-		super(title, slug, content);
+	constructor(id: string, title: string, slug: string, content: string, floor: string, type: string){
+		super(id, title, slug, content);
 		this.floor = floor;
 		this.type = type;
 		this.payments = [];
