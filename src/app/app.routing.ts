@@ -7,11 +7,12 @@ import { EventcardeditComponent } from './eventcardedit/eventcardedit.component'
 const appRoutes: Routes = [
     { path: '', component: DashboardComponent },
 	{ path: 'spots', component: SpotcardComponent }, 
-	{ path: 'spots/:slug', component: SpotcardComponent },
-	{ path: 'spots/:slug/edit', component: SpotcardeditComponent },
-	{ path: 'spots/:slug/createevent', component: EventcardeditComponent },
+	{ path: 'spots/:spot_id', component: SpotcardComponent },
+	{ path: 'spots/:spot_id/edit', component: SpotcardeditComponent },
+	{ path: 'spots/:spot_id/addevent', component: EventcardeditComponent },
 	{ path: 'createspot', component: SpotcardeditComponent }, 
-	{ path: 'spotevents/:slug/edit', component: EventcardeditComponent },
+	{ path: 'spotevents/:event_id/edit', component: EventcardeditComponent },
+	{ path: 'refresh-dashboard', redirectTo: '' },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

@@ -71,14 +71,24 @@ export class DataService {
 
 		let headers: Headers = new Headers();
 		headers.append('Content-Type', 'application/json');
-
-		console.log('Headers');
-		console.log(headers);
-
 		let jsonPayload = JSON.stringify(payload);
-		console.log('JSON payload');
-		console.log(jsonPayload);
-
 		return this.http.post(apiEndPoint, jsonPayload, { headers: headers}).map((response: Response) => response.json().object);
+	}
+
+	removeSpot(spot: Spot){
+
+		let apiEndPoint = this.settings.ApiEndPoint + "objects/" + spot.slug;
+		let payload = {
+			"write_key": this.settings.ApiWriteKey
+		};
+
+		let headers: Headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+		let jsonPayload = JSON.stringify(payload);
+		return this.http.delete(apiEndPoint, { 
+			headers: headers,
+			body: jsonPayload 
+		}).map((response: Response) => response.json());
+
 	}
 }

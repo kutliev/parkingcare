@@ -30,7 +30,7 @@ export class SpotcardeditComponent implements OnInit {
 	}
 
 	getSpot(): void {
-		let spotId = this.route.snapshot.paramMap.get('slug');
+		let spotId = this.route.snapshot.paramMap.get('spot_id');
 		if (spotId) {
 			this.dataService.getSpot(spotId).subscribe(spot => {
 				this.selectedSpot = new Spot(spot._id, spot.title, spot.slug, spot.content, spot.metadata.floor.title, spot.metadata.type);
