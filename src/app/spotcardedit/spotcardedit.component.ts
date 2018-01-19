@@ -47,10 +47,6 @@ export class SpotcardeditComponent implements OnInit {
 			console.log('Update');
 		}else{
 
-			console.log('Create');
-
-			console.log(this.selectedSpot);
-
 			this.dataService.saveSpot(this.selectedSpot).subscribe(result => {
 				console.log('Result');
 				console.log(result);

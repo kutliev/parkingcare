@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
 
 		//Gathering last events
 
-		  for (let rawEvent of rawEvents.sort((a, b) => a.created - b.created).slice(0, 3)){
+		  for (let rawEvent of rawEvents.sort((a, b) => a.created - b.created).slice(0, 10)){
 			  this.spotEvents.push(new SpotEvent(rawEvent._id, rawEvent.title, rawEvent.slug, rawEvent.content, rawEvent.metadata.type, rawEvent.created));
 		  }
 
@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
 			  let floor_title = (rawSpot.metadata.floor) ? rawSpot.metadata.floor.title : "";
 			  let spot = new Spot(rawSpot._id, rawSpot.title, rawSpot.slug, rawSpot.content, floor_title, rawSpot.metadata.type);
 
-			  for(let spotEvent of rawEvents.filter(x => x.metadata.spot._id == rawSpot._id).sort((a,b) => a.created - b.created)){
+			  for (let spotEvent of rawEvents.filter(x => x.metadata.spot && x.metadata.spot.slug == rawSpot.slug).sort((a, b) => a.created - b.created)) {
 
 			  	let currentEvent = new SpotEvent(spotEvent._id, spotEvent.title, spotEvent.slug, spotEvent.content, spotEvent.metadata.type, spotEvent.created);
 

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SpotEvent } from '../models/spotevent';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-eventlist',
@@ -18,9 +19,18 @@ export class EventlistComponent implements OnInit {
 	 return this._spotEvents; 
 	}
   
-  constructor() { }
+  constructor(private dataService: DataService) { }
   
-  ngOnInit() {
-  }
+  ngOnInit() {  }
+
+	removeEvent(event: SpotEvent){
+		if (confirm('Spot event will be removed. Continue?')) {
+			this.dataService.removeEvent(event).subscribe(result => {
+				if (result.status == "200") {
+					this.spotevents = this._spotEvents.filter(x => x != event);
+				}
+			});
+		}
+	}
 
 }

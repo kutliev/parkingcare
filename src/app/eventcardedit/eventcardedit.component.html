@@ -1,3 +1,35 @@
-<p>
-  eventcardedit works!
-</p>
+<div class="row">
+	<div class="col-md-12" style="background: navy; color: white; padding-bottom: 10px; margin-bottom: 10px;">
+		<h2>{{ selectedEvent.slug == '' ? 'Create' : 'Edit' }} event</h2>	
+	</div>
+</div>
+<div>
+	<div class="form">
+
+		<div class="form-group row">
+			<label class="col-sm-2 control-label">Title</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" [(ngModel)] = "selectedEvent.title">
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label class="col-sm-2 control-label">Type</label>
+			<div class="col-sm-10">
+				<select [(ngModel)] = "selectedEvent.type" class="form-control">
+					<option *ngFor="let eventType of eventTypes" [value]="eventType">{{ eventType }}</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label class="col-sm-2 control-label">Remarks</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" [(ngModel)] = "selectedEvent.content">
+			</div>
+		</div>
+
+		<button class="btn btn-lg btn-success" (click)="saveEvent()">Save</button>
+
+	</div>
+</div>

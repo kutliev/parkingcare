@@ -25,13 +25,14 @@ export class SpotlistComponent implements OnInit {
   }
 
   remove(spot: Spot): void{
-	  if (confirm('Spot will be removed. Continue?'))
+	  if (confirm('Spot will be removed. Continue?')) {
 
 		  this.dataService.removeSpot(spot).subscribe(result => {
-			  if(result.status == "200"){
+			  if (result.status == "200") {
 				  this.spots = this._spots.filter(x => x != spot);
 			  }
 		  });
-	  this.router.navigate(['/refresh-dashboard']);
+		  this.router.navigate(['/refresh-dashboard']);
+	  }
   }
 }

@@ -3,6 +3,7 @@
 		<tr>
 			<th>Created</th>
 			<th>Title</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -11,6 +12,7 @@
 				{{ spotevent.created }}
 			</td>
 			<td>{{ spotevent.title }}</td>
+			<td><button class="btn btn-sm btn-danger" (click)="removeEvent(spotevent)">&times;</button></td>
 		</tr>
 	</tbody>
 </table>

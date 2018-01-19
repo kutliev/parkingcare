@@ -11,14 +11,14 @@
 	</thead>
 	<tbody>
 		<tr *ngFor="let spot of spots">
-			<td><a routerLink="/spots/{{ spot._id }}">{{ spot.title }}</a></td>
+			<td><a routerLink="/spots/{{ spot.slug }}">{{ spot.title }}</a></td>
 			<td>{{ spot.type }}</td>
 			<td>{{ spot.cleanings.length }}</td>
 			<td>{{ spot.maintenances.length }}</td>
 			<td>{{ spot.payments.length }}</td>
 			<td>
-				<a class="btn btn-primary btn-sm" routerLink="/spots/{{ spot._id }}/addevent">Add event</a>
-				<a class="btn btn-primary btn-sm" routerLink="/spots/{{ spot._id }}/edit" title="Edit spot">Edit</a>
+				<a class="btn btn-primary btn-sm" routerLink="/spots/{{ spot.slug }}/addevent">Add event</a>
+				<a class="btn btn-primary btn-sm" routerLink="/spots/{{ spot.slug }}/edit" title="Edit spot">Edit</a>
 				<button class="btn btn-danger btn-sm" (click)="remove(spot)">&times;</button>
 			</td>
 		</tr>
