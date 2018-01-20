@@ -11,7 +11,7 @@ import { DataService } from '../services/data.service';
 })
 export class SpotcardComponent implements OnInit {
 
-  selectedSpot: Spot = new Spot('', '', '', '', '', '');
+  selectedSpot: Spot = new Spot('', '', '', '', '', '', '');
 
   constructor(
   		private route: ActivatedRoute,
@@ -28,9 +28,12 @@ export class SpotcardComponent implements OnInit {
   }
 
 	getSpot(spotId: string): void {
-    this.dataService.getObject(spotId).subscribe(spot => { 
-				this.selectedSpot = new Spot(spot._id, spot.title, spot.slug, spot.content, spot.metadata.floor, spot.metadata.type); 
+    this.dataService.getObject(spotId).subscribe(spot => {
+				this.selectedSpot = 
+          new Spot(spot._id, spot.title, spot.slug, spot.content, spot.metadata.floor, spot.metadata.type, spot.metadata.customer); 
         this.getEvents(this.selectedSpot);
+    console.log(this.selectedSpot); 
+
 			});
 	}
 
@@ -41,7 +44,8 @@ export class SpotcardComponent implements OnInit {
       if(spotEventList)
       for (let spotEvent of spotEventList.sort((a, b) => a.created - b.created)) {
 
-        let currentEvent = new SpotEvent(spotEvent._id, spot.slug, spotEvent.title, spotEvent.slug, spotEvent.content, spotEvent.metadata.type, spotEvent.created);
+        let currentEvent = 
+          new SpotEvent(spotEvent._id, spot.slug, spotEvent.title, spotEvent.slug, spotEvent.content, spotEvent.metadata.type, spotEvent.created);
 
         switch (spotEvent.metadata.type) {
           case "Payment":
@@ -64,7 +68,6 @@ export class SpotcardComponent implements OnInit {
   }
 
   remove(spot: Spot): void {
-
     if (!this.canBeDeleted()){
       return alert("Spot with events cannot be deleted");
     };

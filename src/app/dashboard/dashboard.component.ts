@@ -31,7 +31,7 @@ ngOnInit() {
 		if(rawSpots)
 		  for (let rawSpot of rawSpots.sort((a, b) => a.title - b.title)) {
 
-			  let spot = new Spot(rawSpot._id, rawSpot.title, rawSpot.slug, rawSpot.content, rawSpot.metadata.floor, rawSpot.metadata.type);
+			  let spot = new Spot(rawSpot._id, rawSpot.title, rawSpot.slug, rawSpot.content, rawSpot.metadata.floor, rawSpot.metadata.type, rawSpot.metadata.customer);
 
 			  if(rawEvents)
 			  for (let spotEvent of rawEvents.filter(x => x.metadata.spot && x.metadata.spot.slug == rawSpot.slug).sort((a, b) => a.created - b.created)) {

@@ -22,6 +22,11 @@
 			<div class="col-sm-4 text-muted">Type</div>
 			<div class="col-sm-8" [innerHTML] = "selectedSpot?.type">&nbsp;</div>
 		</div>
+		
+		<div class="row" *ngIf="selectedSpot?.customer">
+			<div class="col-sm-4 text-muted">Customer</div>
+			<div class="col-sm-8" [innerHTML] = "selectedSpot?.customer">&nbsp;</div>
+		</div>
 
 		<div class="row">
 			<div class="col-sm-4 text-muted">Description</div>

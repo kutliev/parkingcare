@@ -13,7 +13,7 @@ import { EventTypes } from '../models/settings';
 })
 export class EventcardeditComponent implements OnInit {
 
-	selectedSpot: Spot = new Spot('', '', '', '', 'GroundFloor', 'Vacant');
+	selectedSpot: Spot = new Spot('', '', '', '', 'GroundFloor', 'Vacant', '');
 	selectedEvent: SpotEvent = new SpotEvent('', '', '', '', '', 'Payment', new Date());
 	eventTypes: string[];
 
@@ -38,7 +38,7 @@ export class EventcardeditComponent implements OnInit {
 		this.dataService.getSpotEventData(spotId, spotEventId).subscribe(result => {
 
 			let spot = result.length > 1 ? result[0] : result;
-			this.selectedSpot = new Spot(spot._id, spot.title, spot.slug, spot.content, spot.metadata.floor.title, spot.metadata.type);
+			this.selectedSpot = new Spot(spot._id, spot.title, spot.slug, spot.content, spot.metadata.floor.title, spot.metadata.type, spot.metadata.customer);
 
 			if (spotEventId) {
 				let spotEvent = result[1];

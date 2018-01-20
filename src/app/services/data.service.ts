@@ -51,6 +51,10 @@ export class DataService {
 				{
 					"key": "floor",
 					"value": spot.floor
+				},
+				{
+					"key": "customer",
+					"value": spot.customer
 				}
 			]
 		};
@@ -78,6 +82,10 @@ export class DataService {
 				{
 					"key": "floor",
 					"value": spot.floor
+				},
+				{
+					"key": "customer",
+					"value": spot.customer
 				}
 			]
 		};
