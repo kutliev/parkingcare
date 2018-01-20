@@ -11,6 +11,24 @@ body {
 	background-color: rgba(255, 255, 255, 0.9);
 }
 
+.margin-top-10 {
+	margin-top: 10px;
+}
 .margin-bottom-10 {
 	margin-bottom: 10px;
 }
+
+.colorblock {
+	color: white; padding-bottom: 10px;  margin-bottom: 10px;
+}
+
+.green {
+	background: green; 
+}
+
+.navy {
+	background: navy;
+}
+
+.colorblock a, .colorblock a:visited { color: white; }
+.colorblock a:hover { color: #eef; } 

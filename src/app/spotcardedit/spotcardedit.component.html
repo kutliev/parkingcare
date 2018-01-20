@@ -1,9 +1,14 @@
 <div class="row">
-	<div class="col-md-12" style="background: navy; color: white; padding-bottom: 10px; margin-bottom: 10px;">
-		<h2>{{ selectedSpot.slug == '' ? 'Create' : 'Edit' }} spot</h2>	
+	<div class="col-md-12 colorblock navy">
+
+		<h3 *ngIf="selectedSpot.slug == ''; else editHeader"><a routerLink="/">Home</a> &rarr; New spot</h3>
+		<ng-template #editHeader>
+			<h3><a routerLink="/">Home</a> &rarr; <a routerLink="/spots/{{ selectedSpot.slug}}">Spot {{ selectedSpot.title}}</a> &rarr; Edit</h3>
+		</ng-template>	
 	</div>
 </div>
-<div>
+<div class="row">
+	<div class="col-md-6">
 	<div class="form">
 
 		<div class="form-group row">
@@ -31,7 +36,8 @@
 			</div>
 		</div>
 
-		<button class="btn btn-lg btn-success" (click)="saveSpot()">Save</button>
+		<button class="btn btn-success" (click)="saveSpot()">Save</button>
 
+	</div>
 	</div>
 </div>

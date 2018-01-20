@@ -1,6 +1,6 @@
 <div class="row">
-	<div class="col-md-12" style="background: green; color: white; padding-bottom: 10px;">		
-			<h3>Spot {{ selectedSpot?.title }}</h3>
+	<div class="col-md-12 colorblock green">		
+			<h3><a routerLink="/">Home</a> &rarr; Spot {{ selectedSpot?.title}}</h3>
 	</div>
 </div>
 <div class="row">
@@ -28,7 +28,8 @@
 			<div class="col-sm-8" [innerHTML] = "selectedSpot?.content">&nbsp;</div>
 		</div>
 
-		<a routerLink="/spots/{{ selectedSpot.slug}}/edit" class="btn btn-sm btn-primary">Edit</a>
+		<a routerLink="/spots/{{ selectedSpot.slug}}/edit" class="btn btn-primary">Edit</a>
+		<a class="btn btn-primary" routerLink="/spots/{{ selectedSpot.slug }}/addevent">Add event</a>
 
 	</div>
 	<div class="col-md-3">

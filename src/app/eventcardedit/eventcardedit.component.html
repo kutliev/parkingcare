@@ -1,9 +1,12 @@
 <div class="row">
-	<div class="col-md-12" style="background: navy; color: white; padding-bottom: 10px; margin-bottom: 10px;">
-		<h2>{{ selectedEvent.slug == '' ? 'Create' : 'Edit' }} event</h2>	
+	<div class="col-md-12 colorblock navy">
+		<h3><a routerLink="/">Home</a> &rarr; <a routerLink="/spots/{{ selectedSpot.slug}}">Spot {{ selectedSpot.title}}</a> &rarr; {{ selectedEvent.slug == '' ? 'Create' : 'Edit' }} event</h3>	
 	</div>
 </div>
-<div>
+
+<div class="row margin-top-10">
+	<div class="col-md-6">
+
 	<div class="form">
 
 		<div class="form-group row">
@@ -29,7 +32,9 @@
 			</div>
 		</div>
 
-		<button class="btn btn-lg btn-success" (click)="saveEvent()">Save</button>
+		<button class="btn btn-success" (click)="saveEvent()">Save</button>
 
 	</div>
+	</div>
+
 </div>

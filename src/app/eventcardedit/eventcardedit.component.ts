@@ -25,13 +25,12 @@ export class EventcardeditComponent implements OnInit {
 
   ngOnInit() {
 	  this.eventTypes = EventTypes;
-	  this.getData();
+	  let spotId = this.route.snapshot.paramMap.get('spot_slug');
+	  let spotEventId = this.route.snapshot.paramMap.get('event_slug');
+	  this.getData(spotId, spotEventId);
   }
 
-	getData(): void {
-		let spotId = this.route.snapshot.paramMap.get('spot_slug');
-		let spotEventId = this.route.snapshot.paramMap.get('event_slug');
-
+	getData(spotId: string, spotEventId: string): void {
 		if (!spotId) {
 			this.router.navigate(['/']);
 		}

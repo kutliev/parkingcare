@@ -22,15 +22,16 @@ export class SpotcardeditComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-	  	this.getSpot();
+		let spotId = this.route.snapshot.paramMap.get('spot_slug');
+
+	  	this.getSpot(spotId);
 		this.spotTypes = SpotTypes;
 
 		//TODO: refactor to service
 		this.spotFloors = ['GroundFloor']
 	}
 
-	getSpot(): void {
-		let spotId = this.route.snapshot.paramMap.get('spot_id');
+	getSpot(spotId: string): void {
 		if (spotId) {
 			this.dataService.getSpot(spotId).subscribe(spot => {
 				this.selectedSpot = new Spot(spot._id, spot.title, spot.slug, spot.content, spot.metadata.floor.title, spot.metadata.type);
