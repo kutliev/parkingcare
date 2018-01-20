@@ -59,12 +59,11 @@ export class EventcardeditComponent implements OnInit {
 	saveEvent(): void {
 		let spotEventId = this.route.snapshot.paramMap.get('event_slug');
 		if (spotEventId) {
-			// this.dataService.getSpot(spotId).subscribe(spot => {
-			// 	this.selectedSpot = new Spot(spot.title, spot.slug, spot.content, spot.metadata.floor.title, spot.metadata.type);
-			// });
+			this.dataService.updateEvent(this.selectedEvent, this.selectedSpot).subscribe(result => {
+				this.router.navigate(['/spots/' + this.selectedSpot.slug]);
+			});
 			console.log('Update');
 		} else {
-
 			this.dataService.saveEvent(this.selectedEvent, this.selectedSpot).subscribe(result => {
 				this.router.navigate(['/spots/' + this.selectedSpot.slug]);
 			});

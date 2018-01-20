@@ -157,6 +157,37 @@ export class DataService {
 	}
 
 
+	updateEvent(spotEvent: SpotEvent, spot: Spot) {
+		let apiEndPoint = this.settings.ApiEndPoint + "edit-object";
+		let payload = {
+			"write_key": this.settings.ApiWriteKey,
+			"title": spotEvent.title,
+			"slug": spotEvent.slug,
+			"content": spotEvent.content,
+			"metafields": [
+				{
+					"key": "type",
+					"title": "Type",
+					"value": spotEvent.type
+				},
+				{
+					"object_type": "spots",
+					"key": "spot",
+					"type": "object",
+					"value": spot.id
+				}
+			]
+		};
+
+		let headers: Headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+		let jsonPayload = JSON.stringify(payload);
+		return this.http.put(apiEndPoint, jsonPayload, { headers: headers }).map((response: Response) => response.json().object);
+
+	}
+
+
+
 	getSpotEventData(spot_slug: string, event_slug: string): Observable<any>{
 		if (!event_slug) {
 			return this.getObject(spot_slug);
