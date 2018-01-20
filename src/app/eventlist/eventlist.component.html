@@ -9,9 +9,9 @@
 	<tbody>
 		<tr *ngFor="let spotevent of spotevents">
 			<td>
-				{{ spotevent.created }}
+				{{ spotevent.created | date: 'dd/MM/yyyy' }}
 			</td>
-			<td>{{ spotevent.title }}</td>
+			<td><a routerLink="/spots/{{ spotevent.spot }}/events/{{ spotevent.slug }}">{{ spotevent.title }}</a></td>
 			<td><button class="btn btn-sm btn-danger" (click)="removeEvent(spotevent)">&times;</button></td>
 		</tr>
 	</tbody>

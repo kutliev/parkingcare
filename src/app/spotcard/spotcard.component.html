@@ -27,25 +27,28 @@
 			<div class="col-sm-4 text-muted">Description</div>
 			<div class="col-sm-8" [innerHTML] = "selectedSpot?.content">&nbsp;</div>
 		</div>
-
-		<a routerLink="/spots/{{ selectedSpot.slug}}/edit" class="btn btn-primary">Edit</a>
+		<br/>
 		<a class="btn btn-primary" routerLink="/spots/{{ selectedSpot.slug }}/addevent">Add event</a>
-
+		<a routerLink="/spots/{{ selectedSpot.slug}}/edit" class="btn btn-primary">Edit spot</a>
+		<button *ngIf="canBeDeleted(); else deleteWarning" class="btn btn-danger" (click)="remove(selectedSpot)">Delete</button>
+		<ng-template #deleteWarning>
+			<p class="text-muted">Spot with events cannot be deleted</p>
+		</ng-template>
 	</div>
 	<div class="col-md-3">
 		<h3>Payments</h3>
 		<hr/>
-		<app-eventlist [spotevents] = "selectedSpot.payments"></app-eventlist>
+		<app-eventlist [spotevents] = "selectedSpot.payments" [spot] = "selectedSpot"></app-eventlist>
 	</div>
 	<div class="col-md-3">
 		<h3>Cleaning</h3>
 		<hr/>
-		<app-eventlist [spotevents] = "selectedSpot.cleanings"></app-eventlist>
+		<app-eventlist [spotevents] = "selectedSpot.cleanings" [spot] = "selectedSpot"></app-eventlist>
 	</div>
 	<div class="col-md-3">
 		<h3>Maintenance</h3>
 		<hr/>
-		<app-eventlist [spotevents] = "selectedSpot.maintenances"></app-eventlist>
+		<app-eventlist [spotevents] = "selectedSpot.maintenances" [spot] = "selectedSpot"></app-eventlist>
 	</div>
 </div>
 

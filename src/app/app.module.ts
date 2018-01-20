@@ -11,7 +11,6 @@ import { Settings } from './models/settings';
 import { SpotlistComponent } from './spotlist/spotlist.component';
 import { EventlistComponent } from './eventlist/eventlist.component';
 import { SpotcardComponent } from './spotcard/spotcard.component';
-import { EventcardComponent } from './eventcard/eventcard.component';
 import { SpotcardeditComponent } from './spotcardedit/spotcardedit.component';
 import { EventcardeditComponent } from './eventcardedit/eventcardedit.component';
 
@@ -23,7 +22,6 @@ import { EventcardeditComponent } from './eventcardedit/eventcardedit.component'
     SpotlistComponent,
     EventlistComponent,
     SpotcardComponent,
-    EventcardComponent,
     SpotcardeditComponent,
     EventcardeditComponent
   ],

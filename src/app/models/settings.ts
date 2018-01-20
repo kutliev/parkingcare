@@ -6,3 +6,4 @@ export class Settings {
 
 export const SpotTypes = ['Vacant', 'Rent', 'Owned'];
 export const EventTypes = ['Payment', 'Maintenance', 'Cleaning'];
+export const Floors = ['Ground', 'First', 'Second', 'Top'];

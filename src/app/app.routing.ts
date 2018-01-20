@@ -10,8 +10,10 @@ const appRoutes: Routes = [
 	{ path: 'spots/:spot_slug', component: SpotcardComponent },
 	{ path: 'spots/:spot_slug/edit', component: SpotcardeditComponent },
 	{ path: 'spots/:spot_slug/addevent', component: EventcardeditComponent },
+	{ path: 'spots/:spot_slug/events/', redirectTo: 'spots/:spot_slug' },
+	{ path: 'spots/:spot_slug/events/:event_slug', component: EventcardeditComponent },
 	{ path: 'createspot', component: SpotcardeditComponent }, 
-	{ path: 'spotevents/:event_slug/edit', component: EventcardeditComponent },
+	//{ path: 'spotevents/:event_slug/edit', component: EventcardeditComponent },
 	{ path: 'refresh-dashboard', redirectTo: '' },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

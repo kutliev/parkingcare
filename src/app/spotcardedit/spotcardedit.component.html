@@ -36,7 +36,15 @@
 			</div>
 		</div>
 
-		<button class="btn btn-success" (click)="saveSpot()">Save</button>
+		<div class="form-group row">
+			<label class="col-sm-2 control-label">Remarks</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" [(ngModel)] = "selectedSpot.content">
+			</div>
+		</div>		
+
+		<button class="btn btn-success" (click)="saveSpot(selectedSpot.slug)">Save</button>
+		<a class="btn" routerLink="/spots/{{ selectedSpot.slug}}">Cancel</a>
 
 	</div>
 	</div>
