@@ -57,8 +57,6 @@ ngOnInit() {
 			  }
 			  this.spots.push(spot);
 		  }
-		  console.log(this.spots);
 	  });;
-}
-
+	}
 }

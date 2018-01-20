@@ -32,8 +32,6 @@ export class SpotcardComponent implements OnInit {
 				this.selectedSpot = 
           new Spot(spot._id, spot.title, spot.slug, spot.content, spot.metadata.floor, spot.metadata.type, spot.metadata.customer); 
         this.getEvents(this.selectedSpot);
-    console.log(this.selectedSpot); 
-
 			});
 	}
 

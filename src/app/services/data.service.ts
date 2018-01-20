@@ -26,13 +26,11 @@ export class DataService {
 
 	getSpotEventList(spot: Spot): Observable<any> {
 		let apiEndPoint = this.settings.ApiEndPoint + "object-type/spotevents/search?metafield_key=spot&metafield_value=" + spot.id + "&read_key=" + this.settings.ApiReadKey;
-		console.log(apiEndPoint);
 		return this.http.get(apiEndPoint).map((response: Response) => response.json().objects);
 	}
 
 	getSpots(): Observable<any> {
 		return Observable.forkJoin(this.getSpotData(), this.getSpotEvents());
-
   	}
 
 	saveSpot(spot: Spot): Observable<any> {

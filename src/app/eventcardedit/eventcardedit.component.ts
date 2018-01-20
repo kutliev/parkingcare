@@ -46,9 +46,6 @@ export class EventcardeditComponent implements OnInit {
 			} else {
 				this.setEventTitle();
 			}
-
-			console.log(this.selectedEvent);
-
 		});	
 	} 
 
@@ -62,7 +59,6 @@ export class EventcardeditComponent implements OnInit {
 			this.dataService.updateEvent(this.selectedEvent, this.selectedSpot).subscribe(result => {
 				this.router.navigate(['/spots/' + this.selectedSpot.slug]);
 			});
-			console.log('Update');
 		} else {
 			this.dataService.saveEvent(this.selectedEvent, this.selectedSpot).subscribe(result => {
 				this.router.navigate(['/spots/' + this.selectedSpot.slug]);
